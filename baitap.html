@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>JavaScript Internal Script</title>
+      <base href = "https://www.tutorialspoint.com/" />
+      
+      <script type = "text/JavaScript">
+         function CheckChanLe() {
+            var a;
+             a = prompt("Nhap vao so a", "0");
+             a = parseInt(a);
+          if(a % 2 == 0){
+              alert('Day la so chan')
+          }
+          else{
+            alert('Day la so le')
+          }
+         }
+         function TinhTong(){
+             var i, n, s =0;
+             n = prompt('Nhap so phan tu', '0');
+             for(i = 1; i <=n; i++){
+                 if(i<n){
+                    document.write(' ', i);
+                 }
+                 else{
+                    document.write(' ', i);
+                 }
+                s = (s += i);
+             }
+             document.write(" Tong so day phan tu: ", n ,' bang ', s);
+         }
+         function TanSuat(){
+             var str, i =0, max, l, ascii, tan_suat =[255];
+             str = prompt('Nhap mot chuoi', '');
+             l = str.length; 
+             for (i = 0; i < 255; i ++){
+                 tan_suat[i] =0;
+             }
+             i =0;
+             while (i< l) {
+                 ascii = str[i];
+                 tan_suat[ascii] += 1;
+                 i++;
+                 
+             }
+             max = 0;
+             for(i = 0 ; i<255; i++){
+                 if(i != 32){
+                     if(tan_suat[i] > tan_suat[max])
+                     max =i;
+                 }
+             }
+             document.write('Trong so ban vua nhap  ',str, ' Co ',  max , ' xuat hien :', tan_suat[max])
+         }
+         function LonThu2(){
+            
+           var arr1 = [10];
+            var n, i, j, tmp;
+            n = prompt('Nhap so phan tu mang', '');
+
+           
+            for (i = 0; i < n; i++)
+            {
+                document.write("Phan tu: ", i);
+                arr1[i] = prompt('Nhap thanh phan', '');
+            }
+
+            for (i = 0; i < n; i++)
+            {
+                for (j = i + 1; j < n; j++)
+                {
+                    if (arr1[j] < arr1[i])
+                    {
+                        tmp = arr1[i];
+                        arr1[i] = arr1[j];
+                        arr1[j] = tmp;
+                    }
+                }
+            }
+            document.write("\nIn cac phan tu mang theo thu tu tang dan:\n");
+            for (i = 0; i < n; i++)
+            {
+                document.write("  ", arr1[i]);
+            }
+            document.write("\n\n");      
+
+         }
+      </script>
+   </head>
+
+   <body>
+    <input type = "button" onclick = "CheckChanLe();" name = "ok" value = "Nhap so" />
+    <input type = "button" onclick = "TinhTong();" name = "ok" value = "Nhap so Tinh tong" />
+    <input type = "button" onclick = "TanSuat();" name = "ok" value = "Nhap" />
+    <input type = "button" onclick = "LonThu2();" name = "ok" value = "Tim" />
+   </body>
+
+</html>
